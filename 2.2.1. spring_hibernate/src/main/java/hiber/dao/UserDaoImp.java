@@ -36,7 +36,7 @@ public class UserDaoImp implements UserDao {
                         " :model AND c.series = :series", User.class);
         query.setParameter("model", model);
         query.setParameter("series", series);
-        return query.getSingleResult();
+        return query.setMaxResults(1).getSingleResult();
     }
 
 }
